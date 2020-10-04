@@ -1,3 +1,5 @@
+import goblin from '../../img/goblin.png';
+
 export default class Gamefield {
   constructor(size) {
     this.size = size ** 2;
@@ -28,7 +30,7 @@ export default class Gamefield {
         previousItemField.innerHTML = '';
       }
       const targetField = document.getElementById(`field${this.targetIndex}`);
-      targetField.innerHTML = '<img id="goblin" src = "../src/img/goblin.png">';
+      targetField.innerHTML = `<img id="goblin" src="${goblin}">`;
       this.previousIndex = this.targetIndex;
       this.missedGoblin += 1;
       if (this.missedGoblin > 5) {
