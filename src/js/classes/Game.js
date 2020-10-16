@@ -8,6 +8,7 @@ export default class Game {
   play() {
     const quantity = document.getElementById('quantity');
     const looserGoblin = document.getElementById('looser_goblin');
+
     this.game.gameField.addEventListener('click', (event) => {
       if (event.target.id === 'goblin') {
         this.killGoblin += 1;
@@ -22,11 +23,15 @@ export default class Game {
         alert('Вы победили!');
         this.killGoblin = 0;
         this.looser = 0;
+        quantity.innerText = 0;
+        looserGoblin.innerText = 0;
       }
       if (this.looser > 4) {
         alert('Вы проиграли =(');
         this.killGoblin = 0;
         this.looser = 0;
+        quantity.innerText = 0;
+        looserGoblin.innerText = 0;
       }
     });
   }

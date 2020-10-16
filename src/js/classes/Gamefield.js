@@ -33,6 +33,11 @@ export default class Gamefield {
       targetField.innerHTML = `<img id="goblin" src="${goblin}">`;
       this.previousIndex = this.targetIndex;
       this.missedGoblin += 1;
+
+      this.gameField.addEventListener('click', () => {
+        this.missedGoblin = 0;
+      });
+
       if (this.missedGoblin > 5) {
         clearInterval();
         alert('Вы проиграли =(');
